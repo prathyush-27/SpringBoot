@@ -1,0 +1,16 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Todo Application</title>
+	</head>
+	<body>
+		<h1>Todo Application</h1>
+		<form action="#" th:action="@{/addTodo}" method="post">
+			<input type="text" name="title" placeholder="Add new Todo" required="required">
+			<button value="submit">Add Todo</button>
+		</form>
+		
+		<ul>
+			<li th:each="todo:${todos}" th:text="${todo.title}"></li>
+		</ul>
+	</body>
+</html>
